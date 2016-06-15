@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace client.util
+namespace server.view
 {
-    class JiaMii
+    class View
     {
     }
 }

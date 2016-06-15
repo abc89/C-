@@ -8,6 +8,7 @@ namespace client.data
 {
     class PersonDataSet
     {
+        //所有在线用户集合
        // private static IDictionary<String, String> pds = new Dictionary<string, string>();
         private static List<String> keyNames = new List<string>();
         private static List<String> temp = new List<String>();

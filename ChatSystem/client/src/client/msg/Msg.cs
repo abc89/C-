@@ -8,8 +8,12 @@ namespace client.msg
 {
     class Msg
     {
+        /// <summary>
+        /// 登陆成功 后 的数据包格式
+        /// </summary>
         private enum MsgContent
         {
+            //消息类型、消息处理名称、消息处理端口、消息内容、设置控制类型的具体处理类型、用户会话ID，处理线程ID，存活，消息ID(重发机制)
             msgType, name, port, msgContent, ip, controlMsg, sessionID, operateID, isAlive, msgID
         }
         //消息类型 msgtype

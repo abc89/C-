@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace client.transport
 {
+    /// <summary>
+    /// tcp链接
+    /// </summary>
     class TcpLinkAdp : Link
     {
         private Socket client;//客户端 套接字实例

@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace client.main
 {
+    /// <summary>
+    /// 群聊界面
+    /// </summary>
     public partial class ChatMany : Form,Frame
     {
         private String myName;

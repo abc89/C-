@@ -11,6 +11,9 @@ using server.control;
 
 namespace server.view
 {
+    /// <summary>
+    /// 控制界面 与控制类之间 的view 
+    /// </summary>
     class ServerView 
     {
         private static  ChatControl control;

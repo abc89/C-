@@ -11,8 +11,11 @@ using System.Windows.Forms;
 
 namespace client.main
 {
+    /// <summary>
+    /// 注册界面
+    /// </summary>
     public partial class RegistFrame : Form,Frame
-    {//登陆操作映射类
+    {//注册操作映射类
         private RegistView registView;
         private static int port = 8888;
         public RegistFrame()

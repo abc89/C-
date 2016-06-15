@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace client.data
 {
+    /// <summary>
+    /// 好友列表集合
+    /// </summary>
     class MyFriends
     {  // private static IDictionary<String, String> pds = new Dictionary<string, string>();
         private static List<String> onlineFs = new List<string>();

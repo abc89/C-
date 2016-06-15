@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace client.transport
 {
+    /// <summary>
+    /// 状态更新接收者
+    /// </summary>
     interface Recive
     {
         void update();

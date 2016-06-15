@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace server.link
 {
+    /// <summary>
+    /// udp链接 封装
+    /// </summary>
     class UdpLinkAdp : Link
     {
         private String port;

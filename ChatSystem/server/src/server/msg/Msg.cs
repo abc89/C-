@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace server.msg
 {
+    /// <summary>
+    /// 登陆成功 后 的数据包格式
+    /// </summary>
     class Msg
     {
         private enum MsgContent
         {
-            msgType, name, port, msgContent, ip,controlMsg,sessionID,operateID,isAlive,msgID
+            msgType, name, port, msgContent, ip,controlMsg,sessionID,operateID,isAlive,msgID//消息类型、消息处理名称、消息处理端口、消息内容、设置控制类型的具体处理类型、用户会话ID，处理线程ID，存活，消息ID(重发机制)
         }
         //消息类型 msgtype
         public const String CONTROL = "1";//控制类型信息： 新用户登录，好友更新
@@ -28,10 +31,17 @@ namespace server.msg
         private  static int msgLength = 12;
         private  String[] msgs = new String[msgLength];
         public static String NULLMSG = "null";
+        /// <summary>
+        /// 无参数构造方法  初始化消息
+        /// </summary>
         public Msg()
         {
+            
             clear();
         }
+        /// <summary>
+        /// 消息初始化
+        /// </summary>
         public  void clear()
         {
 
@@ -41,7 +51,10 @@ namespace server.msg
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="msg">需配置消息字符串</param>
         public Msg(String msg) {
             clear();
             if (msg.IndexOf('&')==-1) {
@@ -54,6 +67,11 @@ namespace server.msg
                 msgs[i] = ms[i];
             }
         }
+        /// <summary>
+        /// 字段设置和获取
+        /// </summary>
+
+
         public void setMsgType(String type) {
 
             msgs[(int)MsgContent.msgType] = type;

@@ -11,6 +11,9 @@ using System.Linq;
 
 namespace server.operate
 {
+    /// <summary>
+    /// 消息处理 分配
+    /// </summary>
     internal class OperateMannager
     {
         private OperateThread operateThread;

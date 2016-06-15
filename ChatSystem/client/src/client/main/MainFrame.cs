@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace client.view
 {
+    /// <summary>
+    /// 个人主界面与 控制处理类之间的view
+    /// </summary>
     public partial class MainFrame : Form
     {
         //逻辑界面类

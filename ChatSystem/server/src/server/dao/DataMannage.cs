@@ -8,6 +8,10 @@ using System.Xml;
 
 namespace server.dao
 {
+    /// <summary>
+    /// 用户数据操作
+    /// 
+    /// </summary>
     class DataMannage
     {
        static  String filePath = @"..\..\data\client.xml";

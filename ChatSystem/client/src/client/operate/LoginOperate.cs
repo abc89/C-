@@ -11,12 +11,13 @@ using client.view;
 using client.data;
 using System.Net.NetworkInformation;
 using System.Collections;
-using client.util;
 using client.logs;
 
 namespace client.operate
 {
-
+    /// <summary>
+    /// 登陆处理类
+    /// </summary>
     class LoginOperate : Operate
     {
         private String IP="127.0.0.1";
@@ -61,7 +62,7 @@ namespace client.operate
         {
             ClientLogs.log("开始链接");
             hasLink = false;
-            int port = SocketPort.getAvliatePort(5000,8000);
+          //  int port = SocketPort.getAvliatePort(5000,8000);
             this.username = username1;
             Boolean link = linkServer();
 

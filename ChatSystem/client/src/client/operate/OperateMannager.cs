@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace client.operate
 {
+    /// <summary>
+    /// 接收消息对应操作选择
+    /// </summary>
     class OperateMannager
     {
         private static int OperateMode=3;

@@ -12,6 +12,9 @@ using client.logs;
 
 namespace client.main
 {
+    /// <summary>
+    /// 登陆界面
+    /// </summary>
     public partial class LoginFrame : Form,Frame
     {
         //登陆操作映射类

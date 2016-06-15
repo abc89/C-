@@ -1,6 +1,6 @@
 ﻿namespace client.main
 {
-    partial class ChatFrame
+    partial class SelfMainFrame
     {
         /// <summary>
         /// Required designer variable.

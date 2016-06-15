@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace client.transport
 {
+    /// <summary>
+    /// udp链接
+    /// </summary>
     class UdpLinkAdp : Link
     {
         private String port;

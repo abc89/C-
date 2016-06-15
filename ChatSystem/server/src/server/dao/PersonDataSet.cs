@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace server.Dao
+namespace server.dao
 {
+    /// <summary>
+    /// 已登陆用户集合
+    /// </summary>
     class PersonDataSet
     { // private static IDictionary<String, String> pds = new Dictionary<string, string>();
         private static List<String> keyNames = new List<string>();

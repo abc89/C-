@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace server.link
 {
+    /// <summary>
+    /// tcp链接 封装
+    /// </summary>
     class TcpLinkAdp : Link
     {
         private Socket client;

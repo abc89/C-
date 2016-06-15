@@ -16,7 +16,10 @@ using System.Windows.Forms;
 
 namespace client.main
 {
-    public partial class ChatFrame : Form,Frame
+    /// <summary>
+    /// 聊天界面
+    /// </summary>
+    public partial class SelfMainFrame : Form,Frame
     {
         private MainView view;
         private String name;
@@ -24,7 +27,7 @@ namespace client.main
         //自定义委托类型，委托签名（解释见PPT）与该委托将要绑定的方法签名应保持一致（本例为不带参数的方法）
         //委托类型应在本处而不能在方法里面定义
         public delegate void ReadSptEventHandler();
-        public ChatFrame()
+        public SelfMainFrame()
         {
             InitializeComponent();
             if (view==null) {

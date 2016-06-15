@@ -16,8 +16,8 @@ namespace client.view
     class MainView : Recive
     {
         private MainOperate operate;
-        private ChatFrame chatFrame;
-        public MainView(ChatFrame chatOne1) {
+        private SelfMainFrame chatFrame;
+        public MainView(SelfMainFrame chatOne1) {
             this.chatFrame = chatOne1;
             
             operate = MainOperate.getInsrance(this);

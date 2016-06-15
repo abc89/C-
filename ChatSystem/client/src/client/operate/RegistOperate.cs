@@ -11,6 +11,9 @@ using System.Net.Sockets;
 
 namespace client.operate
 {
+    /// <summary>
+    /// 注册操作处理
+    /// </summary>
     class RegistOperate : Operate
     {
         private String IP = "127.0.0.1";

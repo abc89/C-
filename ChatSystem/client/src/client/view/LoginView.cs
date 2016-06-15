@@ -41,7 +41,7 @@ namespace client.view
             bool ok = loginOperate.startLink(userName, md5Pswd);
             if (ok)
             {
-                new ChatFrame().Show();
+                new SelfMainFrame().Show();
                 loginFrame.changeDis("Hide");
             }
             return false;

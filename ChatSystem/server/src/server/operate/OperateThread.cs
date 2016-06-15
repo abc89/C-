@@ -9,21 +9,25 @@ using server.msg;
 using server.logs;
 using server.control;
 using SocketServerTest;
-using server.Dao;
+using server.dao;
 
 namespace server.operate
 {
+    /// <summary>
+    /// 用户请求处理线程
+    /// </summary>
     class OperateThread
     {
+        //当前处理线程负责 处理 的客户集合
         private List<Client> clients = new List<Client>();
-        private int MAXNUM = 10;
+        //对应用户集合 的处理消息
+        private Queue<Msg> msgs = new Queue<Msg>();
+        private int MAXNUM = 10;//最大处理用户数目
         private Boolean stopThread = false;
         private static int  operateID=0;
-        private String ID;
-        private Queue<Msg> msgs = new Queue<Msg>();
-        private OperateMannager opMannager=new OperateMannager();
-        private OperateControl operateControl;
-        private OperateControl control;
+        private String ID;//当前处理线程ID号
+        private OperateMannager opMannager=new OperateMannager();//消息处理分配类
+        private OperateControl control;//线程处理类 控制
         public OperateThread(OperateControl operateControl) {
             this.ID = Convert.ToString(operateID);
             operateID++;
@@ -31,7 +35,11 @@ namespace server.operate
         }
 
     
-
+        /// <summary>
+        /// 添加新处理用户
+        /// </summary>
+        /// <param name="client">新用户类</param>
+        /// <returns>true： 添加成功   false:添加失败： 当前处理线程已达最大处理用户数</returns>
         internal bool addNewClient(Client client)
         {
             if (clients.Count>MAXNUM) {
@@ -45,13 +53,18 @@ namespace server.operate
         {
             return ID;
         }
-
+        /// <summary>
+        /// 启动当前树立线程
+        /// </summary>
         internal void startOperate()
         {          
                 this.stopThread = false;
                 Thread receiveThread = new Thread(operateTh);
                 receiveThread.Start();
         }
+        /// <summary>
+        /// 处理线程 方法
+        /// </summary>
         void operateTh()
         {
             int alive = 0;
@@ -73,11 +86,16 @@ namespace server.operate
                 
             }
         }
-
+        /// <summary>
+        /// 消息中的用户sessionId，是否对应当前处理线程
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <returns></returns>
         internal bool hasSessionID(Msg msg)
         {
             foreach (Client client in clients)
             {
+                //遍历处理用户集合中的sessionID 是否符合消息中的sessionID
                 if (client.getSessionID().CompareTo(msg.getSessionID())==0)
                 {
                     return true;
@@ -85,7 +103,9 @@ namespace server.operate
             }
             return false;
         }
-
+        /// <summary>
+        /// 扫描处理用户集合 是否有用户离线
+        /// </summary>
         private void isAlives()
         {
          
@@ -112,7 +132,7 @@ namespace server.operate
             ServerLogs.logMoment("队列添加新消息"+msg);
             this.msgs.Enqueue(msg);
         }
-
+        //处理属于当前 用户集合 消息
         private void startOperate(Msg msg)
         {
             foreach (Client client in clients) {

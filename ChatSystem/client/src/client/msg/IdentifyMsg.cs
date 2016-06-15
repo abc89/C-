@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace client.msg
 {
+    /// <summary>
+    /// TCP消息验证 数据格式
+    /// </summary>
     class IdentifyMsg
     {
         private enum MsgContent

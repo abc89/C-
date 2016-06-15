@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace client.transport
 {
+    /// <summary>
+    /// 传输消息 抽象集合
+    /// </summary>
     abstract class Link
     {
         public abstract String receive();

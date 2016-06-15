@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace client.main
 {
+    /// <summary>
+    /// 单聊界面
+    /// </summary>
     public partial class ChatOne : Form,Frame
     {
         private String myName;

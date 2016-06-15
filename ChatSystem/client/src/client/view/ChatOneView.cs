@@ -12,6 +12,9 @@ using client.logs;
 
 namespace client.view
 {
+    /// <summary>
+    /// 聊天界面与 聊天处理类之间的view
+    /// </summary>
     class ChatView : Recive
     {
         
